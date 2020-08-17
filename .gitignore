@@ -77,3 +77,4 @@ html/
 !.gitmodules
 !.astylerc
 !.bazelrc
+!models/**/*.onnx
