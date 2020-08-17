@@ -1,0 +1,41 @@
+
+load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
+
+proto_library(
+    name = "dataset_pb",
+    srcs = ["datasets.proto"],
+    deps = ["//onnx:onnx_pb"],
+    visibility = ["//visibility:public"],
+)
+
+# py_proto_library(
+#     name = "dataset_py_pb",
+#     srcs = ["datasets.proto"],
+#     deps = [":onnx_py_pb"],
+#     visibility = ["//visibility:public"],
+# )
+
+py_library(
+    name = "dataset_py_pb",
+    srcs = ["datasets_pb2.py"],
+    deps = ["//onnx:onnx_py_pb"],
+)
+
+py_binary(
+    name = "tfgen_dataset",
+    srcs = ["tfgen_dataset.py"],
+    deps = [":dataset_py_pb"],
+)
+
+py_library(
+    name = "read_dataset",
+    srcs = ["read_dataset.py"],
+    deps = [":dataset_py_pb"],
+)
+
+py_test(
+    name = "readtest",
+    srcs = ["readtest.py"],
+    deps = [":read_dataset"],
+    data = ["models/mnist.onnx"],
+)
