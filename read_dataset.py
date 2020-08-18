@@ -3,6 +3,13 @@ import numpy as np
 import datasets_pb2
 from onnx import onnx_pb2
 
+def load(filename: str):
+    with open(filename, 'rb') as f:
+        ds = datasets_pb2.Dataset()
+        ds.ParseFromString(f.read())
+        return read_ds(ds)
+    return None
+
 def read_ds(ds: datasets_pb2.Dataset):
     for it in ds.iters:
         ds_iter = read_ds_iterator(it)

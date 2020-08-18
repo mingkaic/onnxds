@@ -75,7 +75,7 @@ def tfwrite_tensor(ox: onnx_pb2.TensorProto, tens: tf.Tensor):
 
 def tfgen_model(name: str, fname = None, **kwargs):
     ox_ds = datasets_pb2.Dataset()
-    tf_ds = tfds.load(name, batch_size=1, **kwargs)
+    tf_ds = tfds.load(name, **kwargs)
     tfwrite_ds(ox_ds, tf_ds)
     if fname is None:
         fname = '/tmp/{}.onnx'.format(name)
@@ -92,9 +92,14 @@ if __name__ == '__main__':
     parser.add_argument('--split', dest='split',
         type=str, nargs='?', default=None,
         help='Tfds.Split subset: one of TRAIN, VALIDATION, TEST, or any other option uses default')
+    parser.add_argument('--batch', dest='batch',
+        type=int, nargs='?', default=1,
+        help='Tfds batch argument')
     args = parser.parse_args(sys.argv[1:])
 
-    argvs = {}
+    argvs = {
+        'batch': args.batch
+    }
     if args.split == 'TRAIN':
         argvs['split'] = tfds.Split.TRAIN
     elif args.split == 'VALIDATION':

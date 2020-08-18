@@ -1,11 +1,14 @@
 
 load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
 
+package(
+    default_visibility = ["//visibility:public"],
+)
+
 proto_library(
     name = "dataset_pb",
     srcs = ["datasets.proto"],
     deps = ["//onnx:onnx_pb"],
-    visibility = ["//visibility:public"],
 )
 
 # py_proto_library(
@@ -37,5 +40,8 @@ py_test(
     name = "readtest",
     srcs = ["readtest.py"],
     deps = [":read_dataset"],
-    data = ["models/mnist.onnx"],
+    data = [
+        "models/mnist.onnx",
+        "models/mnist_5batch.onnx",
+    ],
 )
