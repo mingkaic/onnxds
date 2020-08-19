@@ -4,7 +4,7 @@ import onnxds.read_dataset as helper
 
 class ReadTest(unittest.TestCase):
     def test_single_entry(self):
-        dsgen = helper.load('models/mnist.onnx')
+        dsgen = helper.load('onnxds/mnist.onnx')
         self.assertIsNotNone(dsgen)
         it = next(dsgen)
         self.assertIsInstance(it, dict)
@@ -16,7 +16,7 @@ class ReadTest(unittest.TestCase):
         self.assertEqual((1, 28, 28, 1), image.shape)
 
     def test_batch_entry(self):
-        dsgen = helper.load('models/mnist_5batch.onnx')
+        dsgen = helper.load('onnxds/mnist_5batch.onnx')
         self.assertIsNotNone(dsgen)
         it = next(dsgen)
         self.assertIsInstance(it, dict)

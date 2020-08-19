@@ -36,9 +36,28 @@ py_library(
     deps = [":dataset_py_pb"],
 )
 
+genrule(
+    name = "generate_test_mnist",
+    srcs = [],
+    outs = ["mnist.onnx"],
+    tools = [":tfgen_dataset"],
+    cmd = "$(location :tfgen_dataset) --out $@ --split TRAIN mnist",
+)
+
+genrule(
+    name = "generate_test_mnist_5batch",
+    srcs = [],
+    outs = ["mnist_5batch.onnx"],
+    tools = [":tfgen_dataset"],
+    cmd = "$(location :tfgen_dataset) --out $@ --split TRAIN mnist --batch 5",
+)
+
 py_test(
     name = "readtest",
     srcs = ["readtest.py"],
     deps = [":read_dataset"],
-    data = ["//models:mnist"],
+    data = [
+        ":generate_test_mnist",
+        ":generate_test_mnist_5batch",
+    ],
 )
