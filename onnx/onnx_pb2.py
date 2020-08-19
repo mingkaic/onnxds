@@ -20,8 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='onnx/onnx.proto',
   package='onnx',
   syntax='proto3',
-  serialized_options=_b('H\003'),
-  serialized_pb=_b('\n\x0fonnx/onnx.proto\x12\x04onnx\"\xe8\x04\n\x0e\x41ttributeProto\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x15\n\rref_attr_name\x18\x15 \x01(\t\x12\x12\n\ndoc_string\x18\r \x01(\t\x12\x30\n\x04type\x18\x14 \x01(\x0e\x32\".onnx.AttributeProto.AttributeType\x12\t\n\x01\x66\x18\x02 \x01(\x02\x12\t\n\x01i\x18\x03 \x01(\x03\x12\t\n\x01s\x18\x04 \x01(\x0c\x12\x1c\n\x01t\x18\x05 \x01(\x0b\x32\x11.onnx.TensorProto\x12\x1b\n\x01g\x18\x06 \x01(\x0b\x32\x10.onnx.GraphProto\x12.\n\rsparse_tensor\x18\x16 \x01(\x0b\x32\x17.onnx.SparseTensorProto\x12\x0e\n\x06\x66loats\x18\x07 \x03(\x02\x12\x0c\n\x04ints\x18\x08 \x03(\x03\x12\x0f\n\x07strings\x18\t \x03(\x0c\x12\"\n\x07tensors\x18\n \x03(\x0b\x32\x11.onnx.TensorProto\x12 \n\x06graphs\x18\x0b \x03(\x0b\x32\x10.onnx.GraphProto\x12/\n\x0esparse_tensors\x18\x17 \x03(\x0b\x32\x17.onnx.SparseTensorProto\"\xb8\x01\n\rAttributeType\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\x07\n\x03INT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\n\n\x06TENSOR\x10\x04\x12\t\n\x05GRAPH\x10\x05\x12\x11\n\rSPARSE_TENSOR\x10\x0b\x12\n\n\x06\x46LOATS\x10\x06\x12\x08\n\x04INTS\x10\x07\x12\x0b\n\x07STRINGS\x10\x08\x12\x0b\n\x07TENSORS\x10\t\x12\n\n\x06GRAPHS\x10\n\x12\x12\n\x0eSPARSE_TENSORS\x10\x0c\"Q\n\x0eValueInfoProto\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1d\n\x04type\x18\x02 \x01(\x0b\x32\x0f.onnx.TypeProto\x12\x12\n\ndoc_string\x18\x03 \x01(\t\"\x96\x01\n\tNodeProto\x12\r\n\x05input\x18\x01 \x03(\t\x12\x0e\n\x06output\x18\x02 \x03(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07op_type\x18\x04 \x01(\t\x12\x0e\n\x06\x64omain\x18\x07 \x01(\t\x12\'\n\tattribute\x18\x05 \x03(\x0b\x32\x14.onnx.AttributeProto\x12\x12\n\ndoc_string\x18\x06 \x01(\t\"\xd6\x01\n\x11TrainingInfoProto\x12(\n\x0einitialization\x18\x01 \x01(\x0b\x32\x10.onnx.GraphProto\x12#\n\talgorithm\x18\x02 \x01(\x0b\x32\x10.onnx.GraphProto\x12<\n\x16initialization_binding\x18\x03 \x03(\x0b\x32\x1c.onnx.StringStringEntryProto\x12\x34\n\x0eupdate_binding\x18\x04 \x03(\x0b\x32\x1c.onnx.StringStringEntryProto\"\xc3\x02\n\nModelProto\x12\x12\n\nir_version\x18\x01 \x01(\x03\x12.\n\x0copset_import\x18\x08 \x03(\x0b\x32\x18.onnx.OperatorSetIdProto\x12\x15\n\rproducer_name\x18\x02 \x01(\t\x12\x18\n\x10producer_version\x18\x03 \x01(\t\x12\x0e\n\x06\x64omain\x18\x04 \x01(\t\x12\x15\n\rmodel_version\x18\x05 \x01(\x03\x12\x12\n\ndoc_string\x18\x06 \x01(\t\x12\x1f\n\x05graph\x18\x07 \x01(\x0b\x32\x10.onnx.GraphProto\x12\x34\n\x0emetadata_props\x18\x0e \x03(\x0b\x32\x1c.onnx.StringStringEntryProto\x12.\n\rtraining_info\x18\x14 \x03(\x0b\x32\x17.onnx.TrainingInfoProto\"4\n\x16StringStringEntryProto\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"k\n\x10TensorAnnotation\x12\x13\n\x0btensor_name\x18\x01 \x01(\t\x12\x42\n\x1cquant_parameter_tensor_names\x18\x02 \x03(\x0b\x32\x1c.onnx.StringStringEntryProto\"\xd8\x02\n\nGraphProto\x12\x1d\n\x04node\x18\x01 \x03(\x0b\x32\x0f.onnx.NodeProto\x12\x0c\n\x04name\x18\x02 \x01(\t\x12&\n\x0binitializer\x18\x05 \x03(\x0b\x32\x11.onnx.TensorProto\x12\x33\n\x12sparse_initializer\x18\x0f \x03(\x0b\x32\x17.onnx.SparseTensorProto\x12\x12\n\ndoc_string\x18\n \x01(\t\x12#\n\x05input\x18\x0b \x03(\x0b\x32\x14.onnx.ValueInfoProto\x12$\n\x06output\x18\x0c \x03(\x0b\x32\x14.onnx.ValueInfoProto\x12(\n\nvalue_info\x18\r \x03(\x0b\x32\x14.onnx.ValueInfoProto\x12\x37\n\x17quantization_annotation\x18\x0e \x03(\x0b\x32\x16.onnx.TensorAnnotation\"\xb8\x05\n\x0bTensorProto\x12\x0c\n\x04\x64ims\x18\x01 \x03(\x03\x12\x11\n\tdata_type\x18\x02 \x01(\x05\x12*\n\x07segment\x18\x03 \x01(\x0b\x32\x19.onnx.TensorProto.Segment\x12\x16\n\nfloat_data\x18\x04 \x03(\x02\x42\x02\x10\x01\x12\x16\n\nint32_data\x18\x05 \x03(\x05\x42\x02\x10\x01\x12\x13\n\x0bstring_data\x18\x06 \x03(\x0c\x12\x16\n\nint64_data\x18\x07 \x03(\x03\x42\x02\x10\x01\x12\x0c\n\x04name\x18\x08 \x01(\t\x12\x12\n\ndoc_string\x18\x0c \x01(\t\x12\x10\n\x08raw_data\x18\t \x01(\x0c\x12\x33\n\rexternal_data\x18\r \x03(\x0b\x32\x1c.onnx.StringStringEntryProto\x12\x35\n\rdata_location\x18\x0e \x01(\x0e\x32\x1e.onnx.TensorProto.DataLocation\x12\x17\n\x0b\x64ouble_data\x18\n \x03(\x01\x42\x02\x10\x01\x12\x17\n\x0buint64_data\x18\x0b \x03(\x04\x42\x02\x10\x01\x1a%\n\x07Segment\x12\r\n\x05\x62\x65gin\x18\x01 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x02 \x01(\x03\"\xda\x01\n\x08\x44\x61taType\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\t\n\x05UINT8\x10\x02\x12\x08\n\x04INT8\x10\x03\x12\n\n\x06UINT16\x10\x04\x12\t\n\x05INT16\x10\x05\x12\t\n\x05INT32\x10\x06\x12\t\n\x05INT64\x10\x07\x12\n\n\x06STRING\x10\x08\x12\x08\n\x04\x42OOL\x10\t\x12\x0b\n\x07\x46LOAT16\x10\n\x12\n\n\x06\x44OUBLE\x10\x0b\x12\n\n\x06UINT32\x10\x0c\x12\n\n\x06UINT64\x10\r\x12\r\n\tCOMPLEX64\x10\x0e\x12\x0e\n\nCOMPLEX128\x10\x0f\x12\x0c\n\x08\x42\x46LOAT16\x10\x10\")\n\x0c\x44\x61taLocation\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0c\n\x08\x45XTERNAL\x10\x01\"h\n\x11SparseTensorProto\x12!\n\x06values\x18\x01 \x01(\x0b\x32\x11.onnx.TensorProto\x12\"\n\x07indices\x18\x02 \x01(\x0b\x32\x11.onnx.TensorProto\x12\x0c\n\x04\x64ims\x18\x03 \x03(\x03\"\x95\x01\n\x10TensorShapeProto\x12-\n\x03\x64im\x18\x01 \x03(\x0b\x32 .onnx.TensorShapeProto.Dimension\x1aR\n\tDimension\x12\x13\n\tdim_value\x18\x01 \x01(\x03H\x00\x12\x13\n\tdim_param\x18\x02 \x01(\tH\x00\x12\x12\n\ndenotation\x18\x03 \x01(\tB\x07\n\x05value\"\xe5\x02\n\tTypeProto\x12-\n\x0btensor_type\x18\x01 \x01(\x0b\x32\x16.onnx.TypeProto.TensorH\x00\x12\x31\n\rsequence_type\x18\x04 \x01(\x0b\x32\x18.onnx.TypeProto.SequenceH\x00\x12\'\n\x08map_type\x18\x05 \x01(\x0b\x32\x13.onnx.TypeProto.MapH\x00\x12\x12\n\ndenotation\x18\x06 \x01(\t\x1a\x42\n\x06Tensor\x12\x11\n\telem_type\x18\x01 \x01(\x05\x12%\n\x05shape\x18\x02 \x01(\x0b\x32\x16.onnx.TensorShapeProto\x1a.\n\x08Sequence\x12\"\n\telem_type\x18\x01 \x01(\x0b\x32\x0f.onnx.TypeProto\x1a<\n\x03Map\x12\x10\n\x08key_type\x18\x01 \x01(\x05\x12#\n\nvalue_type\x18\x02 \x01(\x0b\x32\x0f.onnx.TypeProtoB\x07\n\x05value\"5\n\x12OperatorSetIdProto\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03*\xcb\x01\n\x07Version\x12\x12\n\x0e_START_VERSION\x10\x00\x12\x19\n\x15IR_VERSION_2017_10_10\x10\x01\x12\x19\n\x15IR_VERSION_2017_10_30\x10\x02\x12\x18\n\x14IR_VERSION_2017_11_3\x10\x03\x12\x18\n\x14IR_VERSION_2019_1_22\x10\x04\x12\x18\n\x14IR_VERSION_2019_3_18\x10\x05\x12\x18\n\x14IR_VERSION_2019_9_19\x10\x06\x12\x0e\n\nIR_VERSION\x10\x07\x42\x02H\x03\x62\x06proto3')
+  serialized_options=None,
+  serialized_pb=_b('\n\x0fonnx/onnx.proto\x12\x04onnx\"\xe8\x04\n\x0e\x41ttributeProto\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x15\n\rref_attr_name\x18\x15 \x01(\t\x12\x12\n\ndoc_string\x18\r \x01(\t\x12\x30\n\x04type\x18\x14 \x01(\x0e\x32\".onnx.AttributeProto.AttributeType\x12\t\n\x01\x66\x18\x02 \x01(\x02\x12\t\n\x01i\x18\x03 \x01(\x03\x12\t\n\x01s\x18\x04 \x01(\x0c\x12\x1c\n\x01t\x18\x05 \x01(\x0b\x32\x11.onnx.TensorProto\x12\x1b\n\x01g\x18\x06 \x01(\x0b\x32\x10.onnx.GraphProto\x12.\n\rsparse_tensor\x18\x16 \x01(\x0b\x32\x17.onnx.SparseTensorProto\x12\x0e\n\x06\x66loats\x18\x07 \x03(\x02\x12\x0c\n\x04ints\x18\x08 \x03(\x03\x12\x0f\n\x07strings\x18\t \x03(\x0c\x12\"\n\x07tensors\x18\n \x03(\x0b\x32\x11.onnx.TensorProto\x12 \n\x06graphs\x18\x0b \x03(\x0b\x32\x10.onnx.GraphProto\x12/\n\x0esparse_tensors\x18\x17 \x03(\x0b\x32\x17.onnx.SparseTensorProto\"\xb8\x01\n\rAttributeType\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\x07\n\x03INT\x10\x02\x12\n\n\x06STRING\x10\x03\x12\n\n\x06TENSOR\x10\x04\x12\t\n\x05GRAPH\x10\x05\x12\x11\n\rSPARSE_TENSOR\x10\x0b\x12\n\n\x06\x46LOATS\x10\x06\x12\x08\n\x04INTS\x10\x07\x12\x0b\n\x07STRINGS\x10\x08\x12\x0b\n\x07TENSORS\x10\t\x12\n\n\x06GRAPHS\x10\n\x12\x12\n\x0eSPARSE_TENSORS\x10\x0c\"Q\n\x0eValueInfoProto\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1d\n\x04type\x18\x02 \x01(\x0b\x32\x0f.onnx.TypeProto\x12\x12\n\ndoc_string\x18\x03 \x01(\t\"\x96\x01\n\tNodeProto\x12\r\n\x05input\x18\x01 \x03(\t\x12\x0e\n\x06output\x18\x02 \x03(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07op_type\x18\x04 \x01(\t\x12\x0e\n\x06\x64omain\x18\x07 \x01(\t\x12\'\n\tattribute\x18\x05 \x03(\x0b\x32\x14.onnx.AttributeProto\x12\x12\n\ndoc_string\x18\x06 \x01(\t\"\x93\x02\n\nModelProto\x12\x12\n\nir_version\x18\x01 \x01(\x03\x12.\n\x0copset_import\x18\x08 \x03(\x0b\x32\x18.onnx.OperatorSetIdProto\x12\x15\n\rproducer_name\x18\x02 \x01(\t\x12\x18\n\x10producer_version\x18\x03 \x01(\t\x12\x0e\n\x06\x64omain\x18\x04 \x01(\t\x12\x15\n\rmodel_version\x18\x05 \x01(\x03\x12\x12\n\ndoc_string\x18\x06 \x01(\t\x12\x1f\n\x05graph\x18\x07 \x01(\x0b\x32\x10.onnx.GraphProto\x12\x34\n\x0emetadata_props\x18\x0e \x03(\x0b\x32\x1c.onnx.StringStringEntryProto\"4\n\x16StringStringEntryProto\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"k\n\x10TensorAnnotation\x12\x13\n\x0btensor_name\x18\x01 \x01(\t\x12\x42\n\x1cquant_parameter_tensor_names\x18\x02 \x03(\x0b\x32\x1c.onnx.StringStringEntryProto\"\xd8\x02\n\nGraphProto\x12\x1d\n\x04node\x18\x01 \x03(\x0b\x32\x0f.onnx.NodeProto\x12\x0c\n\x04name\x18\x02 \x01(\t\x12&\n\x0binitializer\x18\x05 \x03(\x0b\x32\x11.onnx.TensorProto\x12\x33\n\x12sparse_initializer\x18\x0f \x03(\x0b\x32\x17.onnx.SparseTensorProto\x12\x12\n\ndoc_string\x18\n \x01(\t\x12#\n\x05input\x18\x0b \x03(\x0b\x32\x14.onnx.ValueInfoProto\x12$\n\x06output\x18\x0c \x03(\x0b\x32\x14.onnx.ValueInfoProto\x12(\n\nvalue_info\x18\r \x03(\x0b\x32\x14.onnx.ValueInfoProto\x12\x37\n\x17quantization_annotation\x18\x0e \x03(\x0b\x32\x16.onnx.TensorAnnotation\"\xb8\x05\n\x0bTensorProto\x12\x0c\n\x04\x64ims\x18\x01 \x03(\x03\x12\x11\n\tdata_type\x18\x02 \x01(\x05\x12*\n\x07segment\x18\x03 \x01(\x0b\x32\x19.onnx.TensorProto.Segment\x12\x16\n\nfloat_data\x18\x04 \x03(\x02\x42\x02\x10\x01\x12\x16\n\nint32_data\x18\x05 \x03(\x05\x42\x02\x10\x01\x12\x13\n\x0bstring_data\x18\x06 \x03(\x0c\x12\x16\n\nint64_data\x18\x07 \x03(\x03\x42\x02\x10\x01\x12\x0c\n\x04name\x18\x08 \x01(\t\x12\x12\n\ndoc_string\x18\x0c \x01(\t\x12\x10\n\x08raw_data\x18\t \x01(\x0c\x12\x33\n\rexternal_data\x18\r \x03(\x0b\x32\x1c.onnx.StringStringEntryProto\x12\x35\n\rdata_location\x18\x0e \x01(\x0e\x32\x1e.onnx.TensorProto.DataLocation\x12\x17\n\x0b\x64ouble_data\x18\n \x03(\x01\x42\x02\x10\x01\x12\x17\n\x0buint64_data\x18\x0b \x03(\x04\x42\x02\x10\x01\x1a%\n\x07Segment\x12\r\n\x05\x62\x65gin\x18\x01 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x02 \x01(\x03\"\xda\x01\n\x08\x44\x61taType\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05\x46LOAT\x10\x01\x12\t\n\x05UINT8\x10\x02\x12\x08\n\x04INT8\x10\x03\x12\n\n\x06UINT16\x10\x04\x12\t\n\x05INT16\x10\x05\x12\t\n\x05INT32\x10\x06\x12\t\n\x05INT64\x10\x07\x12\n\n\x06STRING\x10\x08\x12\x08\n\x04\x42OOL\x10\t\x12\x0b\n\x07\x46LOAT16\x10\n\x12\n\n\x06\x44OUBLE\x10\x0b\x12\n\n\x06UINT32\x10\x0c\x12\n\n\x06UINT64\x10\r\x12\r\n\tCOMPLEX64\x10\x0e\x12\x0e\n\nCOMPLEX128\x10\x0f\x12\x0c\n\x08\x42\x46LOAT16\x10\x10\")\n\x0c\x44\x61taLocation\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x00\x12\x0c\n\x08\x45XTERNAL\x10\x01\"h\n\x11SparseTensorProto\x12!\n\x06values\x18\x01 \x01(\x0b\x32\x11.onnx.TensorProto\x12\"\n\x07indices\x18\x02 \x01(\x0b\x32\x11.onnx.TensorProto\x12\x0c\n\x04\x64ims\x18\x03 \x03(\x03\"\x95\x01\n\x10TensorShapeProto\x12-\n\x03\x64im\x18\x01 \x03(\x0b\x32 .onnx.TensorShapeProto.Dimension\x1aR\n\tDimension\x12\x13\n\tdim_value\x18\x01 \x01(\x03H\x00\x12\x13\n\tdim_param\x18\x02 \x01(\tH\x00\x12\x12\n\ndenotation\x18\x03 \x01(\tB\x07\n\x05value\"\xe5\x02\n\tTypeProto\x12-\n\x0btensor_type\x18\x01 \x01(\x0b\x32\x16.onnx.TypeProto.TensorH\x00\x12\x31\n\rsequence_type\x18\x04 \x01(\x0b\x32\x18.onnx.TypeProto.SequenceH\x00\x12\'\n\x08map_type\x18\x05 \x01(\x0b\x32\x13.onnx.TypeProto.MapH\x00\x12\x12\n\ndenotation\x18\x06 \x01(\t\x1a\x42\n\x06Tensor\x12\x11\n\telem_type\x18\x01 \x01(\x05\x12%\n\x05shape\x18\x02 \x01(\x0b\x32\x16.onnx.TensorShapeProto\x1a.\n\x08Sequence\x12\"\n\telem_type\x18\x01 \x01(\x0b\x32\x0f.onnx.TypeProto\x1a<\n\x03Map\x12\x10\n\x08key_type\x18\x01 \x01(\x05\x12#\n\nvalue_type\x18\x02 \x01(\x0b\x32\x0f.onnx.TypeProtoB\x07\n\x05value\"5\n\x12OperatorSetIdProto\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\x03*\xb1\x01\n\x07Version\x12\x12\n\x0e_START_VERSION\x10\x00\x12\x19\n\x15IR_VERSION_2017_10_10\x10\x01\x12\x19\n\x15IR_VERSION_2017_10_30\x10\x02\x12\x18\n\x14IR_VERSION_2017_11_3\x10\x03\x12\x18\n\x14IR_VERSION_2019_1_22\x10\x04\x12\x18\n\x14IR_VERSION_2019_3_18\x10\x05\x12\x0e\n\nIR_VERSION\x10\x06\x62\x06proto3')
 )
 
 _VERSION = _descriptor.EnumDescriptor(
@@ -55,18 +55,14 @@ _VERSION = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='IR_VERSION_2019_9_19', index=6, number=6,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='IR_VERSION', index=7, number=7,
+      name='IR_VERSION', index=6, number=6,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3306,
-  serialized_end=3509,
+  serialized_start=3041,
+  serialized_end=3218,
 )
 _sym_db.RegisterEnumDescriptor(_VERSION)
 
@@ -77,8 +73,7 @@ IR_VERSION_2017_10_30 = 2
 IR_VERSION_2017_11_3 = 3
 IR_VERSION_2019_1_22 = 4
 IR_VERSION_2019_3_18 = 5
-IR_VERSION_2019_9_19 = 6
-IR_VERSION = 7
+IR_VERSION = 6
 
 
 _ATTRIBUTEPROTO_ATTRIBUTETYPE = _descriptor.EnumDescriptor(
@@ -224,8 +219,8 @@ _TENSORPROTO_DATATYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2369,
-  serialized_end=2587,
+  serialized_start=2104,
+  serialized_end=2322,
 )
 _sym_db.RegisterEnumDescriptor(_TENSORPROTO_DATATYPE)
 
@@ -246,8 +241,8 @@ _TENSORPROTO_DATALOCATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2589,
-  serialized_end=2630,
+  serialized_start=2324,
+  serialized_end=2365,
 )
 _sym_db.RegisterEnumDescriptor(_TENSORPROTO_DATALOCATION)
 
@@ -507,58 +502,6 @@ _NODEPROTO = _descriptor.Descriptor(
 )
 
 
-_TRAININGINFOPROTO = _descriptor.Descriptor(
-  name='TrainingInfoProto',
-  full_name='onnx.TrainingInfoProto',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='initialization', full_name='onnx.TrainingInfoProto.initialization', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='algorithm', full_name='onnx.TrainingInfoProto.algorithm', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='initialization_binding', full_name='onnx.TrainingInfoProto.initialization_binding', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='update_binding', full_name='onnx.TrainingInfoProto.update_binding', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=881,
-  serialized_end=1095,
-)
-
-
 _MODELPROTO = _descriptor.Descriptor(
   name='ModelProto',
   full_name='onnx.ModelProto',
@@ -629,13 +572,6 @@ _MODELPROTO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='training_info', full_name='onnx.ModelProto.training_info', index=9,
-      number=20, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -648,8 +584,8 @@ _MODELPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1098,
-  serialized_end=1421,
+  serialized_start=881,
+  serialized_end=1156,
 )
 
 
@@ -686,8 +622,8 @@ _STRINGSTRINGENTRYPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1423,
-  serialized_end=1475,
+  serialized_start=1158,
+  serialized_end=1210,
 )
 
 
@@ -724,8 +660,8 @@ _TENSORANNOTATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1477,
-  serialized_end=1584,
+  serialized_start=1212,
+  serialized_end=1319,
 )
 
 
@@ -811,8 +747,8 @@ _GRAPHPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1587,
-  serialized_end=1931,
+  serialized_start=1322,
+  serialized_end=1666,
 )
 
 
@@ -849,8 +785,8 @@ _TENSORPROTO_SEGMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2329,
-  serialized_end=2366,
+  serialized_start=2064,
+  serialized_end=2101,
 )
 
 _TENSORPROTO = _descriptor.Descriptor(
@@ -972,8 +908,8 @@ _TENSORPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1934,
-  serialized_end=2630,
+  serialized_start=1669,
+  serialized_end=2365,
 )
 
 
@@ -1017,8 +953,8 @@ _SPARSETENSORPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2632,
-  serialized_end=2736,
+  serialized_start=2367,
+  serialized_end=2471,
 )
 
 
@@ -1065,8 +1001,8 @@ _TENSORSHAPEPROTO_DIMENSION = _descriptor.Descriptor(
       name='value', full_name='onnx.TensorShapeProto.Dimension.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2806,
-  serialized_end=2888,
+  serialized_start=2541,
+  serialized_end=2623,
 )
 
 _TENSORSHAPEPROTO = _descriptor.Descriptor(
@@ -1095,8 +1031,8 @@ _TENSORSHAPEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2739,
-  serialized_end=2888,
+  serialized_start=2474,
+  serialized_end=2623,
 )
 
 
@@ -1133,8 +1069,8 @@ _TYPEPROTO_TENSOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3063,
-  serialized_end=3129,
+  serialized_start=2798,
+  serialized_end=2864,
 )
 
 _TYPEPROTO_SEQUENCE = _descriptor.Descriptor(
@@ -1163,8 +1099,8 @@ _TYPEPROTO_SEQUENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3131,
-  serialized_end=3177,
+  serialized_start=2866,
+  serialized_end=2912,
 )
 
 _TYPEPROTO_MAP = _descriptor.Descriptor(
@@ -1200,8 +1136,8 @@ _TYPEPROTO_MAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3179,
-  serialized_end=3239,
+  serialized_start=2914,
+  serialized_end=2974,
 )
 
 _TYPEPROTO = _descriptor.Descriptor(
@@ -1254,8 +1190,8 @@ _TYPEPROTO = _descriptor.Descriptor(
       name='value', full_name='onnx.TypeProto.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=2891,
-  serialized_end=3248,
+  serialized_start=2626,
+  serialized_end=2983,
 )
 
 
@@ -1292,8 +1228,8 @@ _OPERATORSETIDPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3250,
-  serialized_end=3303,
+  serialized_start=2985,
+  serialized_end=3038,
 )
 
 _ATTRIBUTEPROTO.fields_by_name['type'].enum_type = _ATTRIBUTEPROTO_ATTRIBUTETYPE
@@ -1306,14 +1242,9 @@ _ATTRIBUTEPROTO.fields_by_name['sparse_tensors'].message_type = _SPARSETENSORPRO
 _ATTRIBUTEPROTO_ATTRIBUTETYPE.containing_type = _ATTRIBUTEPROTO
 _VALUEINFOPROTO.fields_by_name['type'].message_type = _TYPEPROTO
 _NODEPROTO.fields_by_name['attribute'].message_type = _ATTRIBUTEPROTO
-_TRAININGINFOPROTO.fields_by_name['initialization'].message_type = _GRAPHPROTO
-_TRAININGINFOPROTO.fields_by_name['algorithm'].message_type = _GRAPHPROTO
-_TRAININGINFOPROTO.fields_by_name['initialization_binding'].message_type = _STRINGSTRINGENTRYPROTO
-_TRAININGINFOPROTO.fields_by_name['update_binding'].message_type = _STRINGSTRINGENTRYPROTO
 _MODELPROTO.fields_by_name['opset_import'].message_type = _OPERATORSETIDPROTO
 _MODELPROTO.fields_by_name['graph'].message_type = _GRAPHPROTO
 _MODELPROTO.fields_by_name['metadata_props'].message_type = _STRINGSTRINGENTRYPROTO
-_MODELPROTO.fields_by_name['training_info'].message_type = _TRAININGINFOPROTO
 _TENSORANNOTATION.fields_by_name['quant_parameter_tensor_names'].message_type = _STRINGSTRINGENTRYPROTO
 _GRAPHPROTO.fields_by_name['node'].message_type = _NODEPROTO
 _GRAPHPROTO.fields_by_name['initializer'].message_type = _TENSORPROTO
@@ -1359,7 +1290,6 @@ _TYPEPROTO.fields_by_name['map_type'].containing_oneof = _TYPEPROTO.oneofs_by_na
 DESCRIPTOR.message_types_by_name['AttributeProto'] = _ATTRIBUTEPROTO
 DESCRIPTOR.message_types_by_name['ValueInfoProto'] = _VALUEINFOPROTO
 DESCRIPTOR.message_types_by_name['NodeProto'] = _NODEPROTO
-DESCRIPTOR.message_types_by_name['TrainingInfoProto'] = _TRAININGINFOPROTO
 DESCRIPTOR.message_types_by_name['ModelProto'] = _MODELPROTO
 DESCRIPTOR.message_types_by_name['StringStringEntryProto'] = _STRINGSTRINGENTRYPROTO
 DESCRIPTOR.message_types_by_name['TensorAnnotation'] = _TENSORANNOTATION
@@ -1392,13 +1322,6 @@ NodeProto = _reflection.GeneratedProtocolMessageType('NodeProto', (_message.Mess
   # @@protoc_insertion_point(class_scope:onnx.NodeProto)
   })
 _sym_db.RegisterMessage(NodeProto)
-
-TrainingInfoProto = _reflection.GeneratedProtocolMessageType('TrainingInfoProto', (_message.Message,), {
-  'DESCRIPTOR' : _TRAININGINFOPROTO,
-  '__module__' : 'onnx.onnx_pb2'
-  # @@protoc_insertion_point(class_scope:onnx.TrainingInfoProto)
-  })
-_sym_db.RegisterMessage(TrainingInfoProto)
 
 ModelProto = _reflection.GeneratedProtocolMessageType('ModelProto', (_message.Message,), {
   'DESCRIPTOR' : _MODELPROTO,
@@ -1504,7 +1427,6 @@ OperatorSetIdProto = _reflection.GeneratedProtocolMessageType('OperatorSetIdProt
 _sym_db.RegisterMessage(OperatorSetIdProto)
 
 
-DESCRIPTOR._options = None
 _TENSORPROTO.fields_by_name['float_data']._options = None
 _TENSORPROTO.fields_by_name['int32_data']._options = None
 _TENSORPROTO.fields_by_name['int64_data']._options = None

@@ -98,7 +98,7 @@ if __name__ == '__main__':
     args = parser.parse_args(sys.argv[1:])
 
     argvs = {
-        'batch': args.batch
+        'batch_size': args.batch
     }
     if args.split == 'TRAIN':
         argvs['split'] = tfds.Split.TRAIN

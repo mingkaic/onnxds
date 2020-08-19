@@ -1,7 +1,6 @@
 import unittest
 
 import read_dataset as helper
-import datasets_pb2
 
 class ReadTest(unittest.TestCase):
     def test_single_entry(self):
