@@ -72,6 +72,13 @@ def tfwrite_tensor(ox: onnx_pb2.TensorProto, tens: tf.Tensor):
         onnx_pb2.TensorProto.DataType.FLOAT16,
         onnx_pb2.TensorProto.DataType.DOUBLE):
         ox.float_data.extend(data.flatten())
+    else:
+        raw = data.flatten()
+        if isinstance(raw[0], bytes) or isinstance(raw[0], str):
+            ox.data_type = onnx_pb2.TensorProto.DataType.STRING
+            ox.string_data.extend(raw)
+        else:
+            assert False, 'failed to serialize unknown datatype {}: {}...'.format(type(raw[0]), raw[0])
 
 def tfgen_model(name: str, fname = None, **kwargs):
     ox_ds = datasets_pb2.Dataset()

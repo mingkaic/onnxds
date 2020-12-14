@@ -42,12 +42,14 @@ _onnx_type_match = {
     onnx_pb2.TensorProto.DataType.INT64: np.int64,
     onnx_pb2.TensorProto.DataType.UINT64: np.uint64,
     onnx_pb2.TensorProto.DataType.FLOAT16: np.single,
-    onnx_pb2.TensorProto.DataType.DOUBLE: np.double
+    onnx_pb2.TensorProto.DataType.DOUBLE: np.double,
+    onnx_pb2.TensorProto.DataType.STRING: np.object
 }
 
 def read_ds_tensor(tensor: onnx_pb2.TensorProto):
-    assert(tensor.data_type != onnx_pb2.TensorProto.DataType.UNDEFINED and
-        tensor.data_type in _onnx_type_match)
+    assert tensor.data_type != onnx_pb2.TensorProto.DataType.UNDEFINED and\
+        tensor.data_type in _onnx_type_match,\
+        'unsupported or unknown tensor data type {}'.format(tensor.data_type)
     shape = tensor.dims
     dtype = _onnx_type_match[tensor.data_type]
     raw = []
@@ -68,4 +70,6 @@ def read_ds_tensor(tensor: onnx_pb2.TensorProto):
         onnx_pb2.TensorProto.DataType.FLOAT16,
         onnx_pb2.TensorProto.DataType.DOUBLE):
         raw = tensor.float_data
+    elif tensor.data_type == onnx_pb2.TensorProto.DataType.STRING:
+        raw = tensor.string_data
     return np.array(raw, dtype=dtype).reshape(shape)
